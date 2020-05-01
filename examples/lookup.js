@@ -7,7 +7,9 @@
  */
 
 var program = require('commander');
-var wordnet = require('../lib/wordnet.js');
+var WordNet = require('../lib/wordnet.js');
+
+var wordnet = new WordNet(__dirname + '/../db');
 
 program
   .version('0.0.1')

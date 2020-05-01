@@ -4,7 +4,9 @@
  * @author Dariusz Dziuk <me@dariuszdziuk.com>
  */
 
-var wordnet = require('../lib/wordnet.js');
+var WordNet = require('../lib/wordnet.js');
+
+var wordnet = new WordNet(__dirname + '/../db');
 
 wordnet.list(function(err, list) {
 
