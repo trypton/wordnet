@@ -4,12 +4,10 @@
  * @author Dariusz Dziuk <me@dariuszdziuk.com>
  */
 
-var WordNet = require('../lib/wordnet.js');
+const WordNet = require('../lib/wordnet.js');
 
-var wordnet = new WordNet(__dirname + '/../db');
+const wordnet = new WordNet(__dirname + '/../db');
 
-wordnet.list(function(err, list) {
-
+wordnet.list().then((list) => {
   console.log(list);
-
 });

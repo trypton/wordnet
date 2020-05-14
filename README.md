@@ -15,20 +15,18 @@ In this case you don't need to provide path to wordnet database.
 
 An example how to use the module is located in examples/lookup.js.
 
-    var WordNet = require('../lib/wordnet.js');
+    const WordNet = require('../lib/wordnet.js');
 
-    var wordnet = new WordNet(__dirname + '/../db');
+    const wordnet = new WordNet(__dirname + '/../db');
 
     // or if wordnet-db installed
-    // var wordnet = new WordNet();
+    // const wordnet = new WordNet();
 
-    wordnet.lookup('define', function(err, definitions) {
+    wordnet.lookup('define').then(definitions) {
     
-      definitions.forEach(function(definition) {
-        console.log('  words: %s', words.trim());
-        console.log('  %s', definition.glossary);
-      });
-    
+      // definitions is an array of arrays with definitions
+      // all definitions grouped by pos
+
     });
 
 # License
