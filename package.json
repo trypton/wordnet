@@ -16,6 +16,6 @@
   "repository": "git://github.com/dariuszdziuk/wordnet",
   "license": "MIT",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">=11.00.0"
   }
 }

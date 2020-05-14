@@ -23,10 +23,11 @@ An example how to use the module is located in examples/lookup.js.
     // const wordnet = new WordNet();
 
     wordnet.lookup('define').then(definitions) {
-    
-      // definitions is an array of arrays with definitions
-      // all definitions grouped by pos
-
+      definitions.forEach((definition) => {
+        console.log('  type : %s', definition.meta.synsetType);
+        console.log('  words: %s', words.trim());
+        console.log('  %s', definition.glossary);
+      });
     });
 
 # License

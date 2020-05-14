@@ -21,13 +21,11 @@ if (!word) {
   program.help();
 }
 
-wordnet.lookup(word).then(async (allDefinitions) => {
+wordnet.lookup(word).then(async (definitions) => {
   console.log('\n  %s\n', word);
 
-  for (let posDefinitions of allDefinitions) {
-    for (let definition of posDefinitions) {
-      await printWord(definition, true);
-    }
+  for (let definition of definitions) {
+    await printWord(definition, true);
   }
 }).catch((e) => {
   console.log('An error has occurred: %s', e);
