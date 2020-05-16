@@ -32,21 +32,21 @@ wordnet.lookup(word).then(async (definitions) => {
 });
 
 async function printWord(definition, usePointers) {
-  console.log('  type : %s', definition.meta.synsetType);
+  console.log('  type : %s', definition.synsetType);
 
-  const words = definition.meta.words.map(wordData => wordData.word).join(' / ');
+  const words = definition.words.map(wordData => wordData.word).join(' / ');
   console.log('  words: %s', words);
   console.log('  %s', definition.glossary);
   console.log();
 
   /* Print pointers */
   if (usePointers) {
-    for (let pointer of definition.meta.pointers) {
+    for (let pointer of definition.pointers) {
       const data = await pointer.getData();
 
       /* Print the word only if contains (or prefixes) the look up expression */
       var found = false;
-      data.meta.words.forEach((aWord) => {
+      data.words.forEach((aWord) => {
         if (aWord.word.indexOf(word) === 0) {
           found = true;
         }

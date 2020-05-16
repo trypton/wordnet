@@ -24,8 +24,9 @@ An example how to use the module is located in examples/lookup.js.
 
     wordnet.lookup('define').then(definitions) {
       definitions.forEach((definition) => {
-        console.log('  type : %s', definition.meta.synsetType);
-        console.log('  words: %s', words.trim());
+        console.log('  type : %s', definition.synsetType);
+        const words = definition.words.map(wordData => wordData.word).join(' / ');
+        console.log('  words: %s', words);
         console.log('  %s', definition.glossary);
       });
     });
